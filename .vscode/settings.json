@@ -1,0 +1,19 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "docker exec": true,
+        "/^node -e \"const \\{spawn\\}=require\\('child_process'\\); const c=spawn\\('/snap/bin/docker',\\['exec','clonetabnews-dev-database','pg_isready'\\]\\); c\\.stdout\\.on\\('data', d=>process\\.stdout\\.write\\('OUT:'\\+d\\)\\); c\\.stderr\\.on\\('data', d=>process\\.stdout\\.write\\('ERR:'\\+d\\)\\); c\\.on\\('close', code=>console\\.log\\('CLOSE',code\\)\\);\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node -e \"const \\{spawn\\}=require\\('child_process'\\); const c=spawn\\('/snap/bin/docker',\\['exec','-i','clonetabnews-dev-database','pg_isready'\\]\\); c\\.stdout\\.on\\('data', d=>process\\.stdout\\.write\\('OUT:'\\+d\\)\\); c\\.stderr\\.on\\('data', d=>process\\.stdout\\.write\\('ERR:'\\+d\\)\\); c\\.on\\('close', code=>console\\.log\\('CLOSE',code\\)\\);\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "timeout": true,
+        "/^node infra/scripts/wait-for-postgres\\.js$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "docker compose": true
+    }
+}
