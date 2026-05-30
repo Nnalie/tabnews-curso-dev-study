@@ -1,10 +1,10 @@
 import database from "infra/database";
+import waitForAllServices from "tests/orchestrator.js";
 
-beforeAll(clearDatabase);
-
-async function clearDatabase() {
+beforeAll(async () => {
+  await waitForAllServices();
   await database.query("DROP SCHEMA public CASCADE; CREATE SCHEMA public;");
-}
+});
 
 test("GET to /api/v1/migrations should return 200", async () => {
 
