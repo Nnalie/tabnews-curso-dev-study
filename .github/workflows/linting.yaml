@@ -2,7 +2,7 @@ name: Linting
 
 on: pull_request # aceita um array para adicionar mais acoes para ficar escutando, tipo [push, pull_request]
 
-jobs: 
+jobs:
   prettier:
     name: Prettier
     runs-on: ubuntu-latest

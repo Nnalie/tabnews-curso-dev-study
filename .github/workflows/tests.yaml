@@ -2,7 +2,7 @@ name: Automated Tests
 
 on: pull_request # aceita um array para adicionar mais acoes para ficar escutando, tipo [push, pull_request]
 
-jobs: 
+jobs:
   jest:
     name: Jest Ubuntu
     runs-on: ubuntu-latest

@@ -5,5 +5,5 @@ services:
     env_file:
       - ../.env.development
     ports:
-        # - "host:container"
+      # - "host:container"
       - "5432:5432"
