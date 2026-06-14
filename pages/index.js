@@ -1,15 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Heart,
-  Stars,
-  Calendar,
-  Award,
-  Rocket,
-  PawPrint,
-  Play,
-  Sparkles,
-} from "lucide-react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Heart, Rocket, PawPrint, Play } from "lucide-react";
 import confetti from "canvas-confetti";
 import YouTube from "react-youtube";
 
@@ -17,17 +8,8 @@ import YouTube from "react-youtube";
 // <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@700&display=swap" rel="stylesheet">
 
 const LoveJourneyFinal = () => {
-  const [daysTogether, setDaysTogether] = useState(0);
   const [showSurprise, setShowSurprise] = useState(false);
-  const startDate = new Date("2022-11-24"); // ❤️ Ajuste sua data aqui
   const youtubeVideoId = "i6l9sLLwxJ8";
-
-  useEffect(() => {
-    const today = new Date();
-    const diffTime = Math.abs(today - startDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    setDaysTogether(diffDays);
-  }, []);
 
   const handleSurprise = () => {
     setShowSurprise(true);
@@ -162,7 +144,7 @@ const LoveJourneyFinal = () => {
                 </div>
               </div>
               <p className="text-[6vw] mt-8 font-bold italic drop-shadow-md">
-                "Você é meu melhor presente!"
+                &quot;Você é meu melhor presente!&quot;
               </p>
             </motion.div>
           )}
