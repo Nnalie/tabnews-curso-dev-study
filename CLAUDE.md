@@ -50,9 +50,9 @@ HTTP request
 
 ### API routes (`pages/api/v1/`)
 
-| Route | Methods | Purpose |
-|---|---|---|
-| `/api/v1/status` | GET | Returns DB version, max connections, open connections |
+| Route                | Methods    | Purpose                                                          |
+| -------------------- | ---------- | ---------------------------------------------------------------- |
+| `/api/v1/status`     | GET        | Returns DB version, max connections, open connections            |
 | `/api/v1/migrations` | GET / POST | GET = dry-run (pending list); POST = actually applies migrations |
 
 The migrations route uses `node-pg-migrate` directly (not the CLI) and keeps its own `pg.Client` open across the migration run, closing it in a `finally` block.
@@ -72,7 +72,6 @@ Tests that touch migrations call `DROP SCHEMA public CASCADE; CREATE SCHEMA publ
 ### CI
 
 Both GitHub Actions workflows run on `pull_request`. Linting runs Prettier check and ESLint as separate jobs. The test workflow runs `npm test`, which includes the Docker/service startup.
-
 
 ### Commit philosophy
 
